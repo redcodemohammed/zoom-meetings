@@ -18,10 +18,11 @@ public class Main {
         if (mode == 0) {
             // the user has chosen the first mode:
             System.out.println("Please choice an operation from the list:");
-            System.out.println("0: + for addition.");
-            System.out.println("1: - for subtraction.");
-            System.out.println("2: * for multiplication.");
-            System.out.println("3: / for division.");
+            System.out.println("0: for addition.");
+            System.out.println("1: for subtraction.");
+            System.out.println("2: for multiplication.");
+            System.out.println("3: for division.");
+            // * add more operations here.
 
             // read the operation
             int operation = input.nextInt();
@@ -41,16 +42,23 @@ public class Main {
                 case 1:
                     // the user has chosen subtraction:
                     System.out.printf("%s - %s = %s\n", num1, num2, num1 - num2);
+                    // * subtract the 2 numbers and print the result.
                     break;
                 case 2:
                     // the user has chosen multiplication:
+                    System.out.printf("%s × %s = %s\n", num1, num2, num1 * num2);
+                    // * multiply the 2 numbers and print the result.
                     break;
                 case 3:
                     // the user has chosen division:
+                    System.out.printf("%s ÷ %s = %s\n", num1, num2, num1 / num2);
+                    // * divide the 2 number and print the result.
                     break;
 
                 default:
                     // the user has and invalid operation:
+                    System.out.println("Invalid operation, please try again");
+                    // * print an error message.
                     break;
             }
 
@@ -105,17 +113,24 @@ public class Main {
                                 break;
                             default:
                                 result = division + result;
-                                break;
                         }
                         num /= 16;
                     }
+                    // * convert the DEC number to HEX and store it in the result variable.
                     break;
                 case 2:
                     // DEC to OCT:
+                    while (num > 0) {
+                        result = num % 8 + result;
+                        num /= 8;
+                    }
+                    // * convert the DEC number to OCT and store it in the result variable.
                     break;
 
                 default:
                     // the user has and invalid operation:
+                    System.out.println("Invalid operation, please try again");
+                    // * print an error message.
                     break;
             }
 
@@ -123,7 +138,6 @@ public class Main {
         } else {
             // invalid mode:
             System.out.println("You entered an invalid mode, please try again with a valid one.");
-
         }
 
         input.close();
